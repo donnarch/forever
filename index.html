@@ -8,23 +8,15 @@
   </head>
   <body>
     <!-- Background Music -->
-      <source
-        src="./audio/Баста Выпускной (Медлячок).m4a"
-        type="audio/mp3"
-      />
-    </loop>
-    <!-- <audio autoplay loop>
-      <source src="./audio/Alphaville Forever Young (Official Video HD).m4a" type="audio/mp3" />
-    </audio> -->
     <div class="music-player">
       <button id="playPause">🔊</button>
       <audio id="bgMusic" loop>
-        <source src="./audio/Alphaville Forever Young (Official Video HD).m4a " type="audio/mp3" />
+        <source
+          src="./audio/Alphaville Forever Young (Official Video HD).m4a "
+          type="audio/mp3"
+        />
       </audio>
     </div>
-        
-
-    <!-- Navigation -->
     <nav class="navbar">
       <h1>Classmates</h1>
       <ul>
@@ -74,9 +66,13 @@
         <video controls class="fade-in">
           <source src="./video/aish.MOV" type="video/mp4" />
           Your browser does not support the video tag.
-        </video><video controls class="fade-in">
+        </video>
+        <video controls class="fade-in">
           <source src="./video/rayhon.MOV" type="video/mp4" />
-          Your browser does not support the video tag.<video controls class="fade-in">
+          Your browser does not support the video tag.<video
+            controls
+            class="fade-in"
+          >
             <source src="./video/rayhon.MOV" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -94,7 +90,10 @@
           Your browser does not support the video tag.
         </video>
         <video controls class="fade-in">
-          <source src="./video/it too late to pick this up.MOV" type="video/mp4" />
+          <source
+            src="./video/it too late to pick this up.MOV"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
         <video controls class="fade-in">
@@ -121,7 +120,6 @@
           <source src="./video/shalh.MOV" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
       </section>
 
       <!-- Messages Section -->
@@ -146,9 +144,8 @@
         <h2 class="section-title fade-in">Download Memories</h2>
         <div class="download-area fade-in">
           <br /><br />
-          <a href="videos/video1.mp4" download class="download-btn"
+          <a href="./video/aish.MOV" download class="download-btn"
             >Download qillarin</a
-            
           >
           <a class="game" href="./game.html">GAME CREATED BY DONN</a>
         </div>
@@ -158,9 +155,9 @@
   <script>
     const playPauseBtn = document.getElementById("playPause");
     const music = document.getElementById("bgMusic");
-  
+
     let isPlaying = false;
-  
+
     playPauseBtn.addEventListener("click", () => {
       if (isPlaying) {
         music.pause();
@@ -171,15 +168,18 @@
       }
       isPlaying = !isPlaying;
     });
-  
+
     // Auto-play once user interacts with the page
-    window.addEventListener("click", () => {
-      if (!isPlaying) {
-        music.play();
-        playPauseBtn.textContent = "🔊";
-        isPlaying = true;
-      }
-    }, { once: true });
+    window.addEventListener(
+      "click",
+      () => {
+        if (!isPlaying) {
+          music.play();
+          playPauseBtn.textContent = "🔊";
+          isPlaying = true;
+        }
+      },
+      { once: true }
+    );
   </script>
-  
 </html>
