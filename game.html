@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Who Farted? 💨</title>
+    <a href="./index.html">CREATED BY DONN</a>
+    <style>
+      body {
+        margin: 0;
+        background: #e0f7fa;
+        font-family: Comic Sans MS, cursive;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 20px;
+      }
+
+      #classroom {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 40px;
+      }
+
+      .student {
+        position: relative;
+        width: 100px;
+        cursor: pointer;
+      }
+
+      .student img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
+
+      .fart {
+        position: absolute;
+        top: -30px;
+        left: 30px;
+        font-size: 24px;
+        display: none;
+      }
+
+      #message {
+        font-size: 24px;
+        margin-top: 30px;
+        color: #333;
+      }
+
+      #score {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>💨 Who Farted?</h1>
+    <div id="classroom">
+      <div class="student" data-name="Eldor">
+        <img
+          src="https://assets.farmsanctuary.org/content/uploads/2021/06/17125437/2016-03-08_FSOR__Rod_Stewart__DSC6183_CREDIT_Farm_Sanctuary-1-1187x1600.jpg"
+          alt="Aisha"
+        />
+        <div class="fart">💨</div>
+      </div>
+      <div class="student" data-name="Javlon">
+        <img
+          src="https://assets.farmsanctuary.org/content/uploads/2021/06/17125437/2016-03-08_FSOR__Rod_Stewart__DSC6183_CREDIT_Farm_Sanctuary-1-1187x1600.jpg"
+          alt="Doni"
+        />
+        <div class="fart">💨</div>
+      </div>
+      <div class="student" data-name="Sardor">
+        <img
+          src="https://assets.farmsanctuary.org/content/uploads/2021/06/17125437/2016-03-08_FSOR__Rod_Stewart__DSC6183_CREDIT_Farm_Sanctuary-1-1187x1600.jpg"
+          alt="Sardor"
+        />
+        <div class="fart">💨</div>
+      </div>
+      <div class="student" data-name="Rizo">
+        <img
+          src="https://assets.farmsanctuary.org/content/uploads/2021/06/17125437/2016-03-08_FSOR__Rod_Stewart__DSC6183_CREDIT_Farm_Sanctuary-1-1187x1600.jpg"
+          alt="Zarina"
+        />
+        <div class="fart">💨</div>
+      </div>
+    </div>
+
+    <div id="message"></div>
+    <div id="score">Score: 0</div>
+
+    <!-- Funny fart sound -->
+    <audio
+      id="fartSound"
+      src="https://www.fesliyanstudios.com/play-mp3/387"
+      preload="auto"
+    ></audio>
+
+    <script>
+      const students = document.querySelectorAll(".student");
+      const fartSound = document.getElementById("fartSound");
+      const message = document.getElementById("message");
+      const scoreDisplay = document.getElementById("score");
+
+      let farter = null;
+      let score = 0;
+
+      function pickRandomFarter() {
+        // Hide all farts first
+        students.forEach(
+          (s) => (s.querySelector(".fart").style.display = "none")
+        );
+
+        const index = Math.floor(Math.random() * students.length);
+        farter = students[index];
+        const fartIcon = farter.querySelector(".fart");
+        fartIcon.style.display = "block";
+        fartSound.currentTime = 0;
+        fartSound.play();
+
+        // Fart disappears after 1.5 seconds
+        setTimeout(() => {
+          fartIcon.style.display = "none";
+          farter = null;
+        }, 1500);
+      }
+
+      students.forEach((student) => {
+        student.addEventListener("click", () => {
+          const name = student.dataset.name;
+          if (farter === student) {
+            score++;
+            message.textContent = `🤣 You caught ${name} farting!`;
+          } else {
+            message.textContent = `😬 Nope! ${name} is innocent.`;
+          }
+          scoreDisplay.textContent = `Score: ${score}`;
+        });
+      });
+
+      // Start farting every 3 seconds
+      setInterval(pickRandomFarter, 3000);
+    </script>
+  </body>
+</html>

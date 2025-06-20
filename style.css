@@ -15,7 +15,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background: #0a4dad;
+  background: black;
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -55,7 +55,7 @@ body {
 
 .header h2 {
   font-size: 2.5rem;
-  color: #0a4dad;
+  color: orange;
 }
 
 /* Main Content */
@@ -76,6 +76,7 @@ body {
 .intro {
   text-align: center;
   margin-bottom: 40px;
+  color: white;
 }
 
 /* Gallery */
@@ -125,6 +126,11 @@ video {
   border-radius: 5px;
   font-style: italic;
 }
+.Doni {
+  text-align: center;
+  font-weight: 900;
+  color: white;
+}
 
 /* Download Section */
 .download-btn {
@@ -136,6 +142,15 @@ video {
   border-radius: 8px;
   font-weight: bold;
   transition: background 0.3s;
+}
+.game {
+  align-items: center;
+  justify-content: center;
+  font-weight: 1000;
+  padding: 300px;
+  background-size: cover;
+  color: green;
+  font-size: 600;
 }
 
 .download-btn:hover {
