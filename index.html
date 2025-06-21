@@ -4,19 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classmates</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      onclick="document.body.classList.toggle('dark-mode')"
+    >
+      🌙
+    </button>
+
     <!-- Background Music -->
     <div class="music-player">
       <button id="playPause">🔊</button>
       <audio id="bgMusic" loop>
         <source
-          src="./audio/Alphaville Forever Young (Official Video HD).m4a "
+          src="./audio/Alphaville Forever Young (Official Video HD).m4a"
           type="audio/mp3"
         />
       </audio>
     </div>
+
     <nav class="navbar">
       <h1>Classmates</h1>
       <ul>
@@ -48,78 +61,68 @@
       <section id="gallery">
         <h2 class="section-title fade-in">Photo Gallery</h2>
         <div class="gallery fade-in">
-          <img src="./images/vinetkoo.jpg" alt="Memory 1" />
-          <img src="./images/vinetka.jpg" alt="Memory 2" />
-          <img src="./images/vinetks.jpg" alt="Memory 3" />
-          <img src="./images/MOL.jpg" alt="Memory 3" />
-          <img src="./images/studio.jpg" alt="Memory 3" />
+          <a href="./images/vinetkoo.jpg" data-lightbox="school"
+            ><img src="./images/vinetkoo.jpg" alt="Memory 1"
+          /></a>
+          <a href="./images/vinetka.jpg" data-lightbox="school"
+            ><img src="./images/vinetka.jpg" alt="Memory 2"
+          /></a>
+          <a href="./images/vinetks.jpg" data-lightbox="school"
+            ><img src="./images/vinetks.jpg" alt="Memory 3"
+          /></a>
+          <a href="./images/MOL.jpg" data-lightbox="school"
+            ><img src="./images/MOL.jpg" alt="Memory 4"
+          /></a>
+          <a href="./images/studio.jpg" data-lightbox="school"
+            ><img src="./images/studio.jpg" alt="Memory 5"
+          /></a>
         </div>
       </section>
 
       <!-- Videos Section -->
       <section id="videos">
         <h2 class="section-title fade-in">Video Memories</h2>
-        <video controls class="fade-in">
-          <source src="./video/last.MP4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/aish.MOV" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/rayhon.MOV" type="video/mp4" />
-          Your browser does not support the video tag.<video
-            controls
-            class="fade-in"
-          >
+        <div class="videos fade-in">
+          <video controls>
+            <source src="./video/last.MP4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/aish.MOV" type="video/mp4" />
+          </video>
+          <video controls>
             <source src="./video/rayhon.MOV" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
-          <video controls class="fade-in">
+          <video controls>
             <source src="./video/shalh.MOV" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/sumalak.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/9 th end.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source
-            src="./video/it too late to pick this up.MOV"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/sumalak.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/otdi otdi.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/9th grade.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/vals.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/sori.MOV" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video controls class="fade-in">
-          <source src="./video/shalh.MOV" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <video controls>
+            <source src="./video/sumalak.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/9 th end.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source
+              src="./video/it too late to pick this up.MOV"
+              type="video/mp4"
+            />
+          </video>
+          <video controls>
+            <source src="./video/otdi otdi.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/9th grade.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/vals.mp4" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/sori.MOV" type="video/mp4" />
+          </video>
+          <video controls>
+            <source src="./video/shalh.MOV" type="video/mp4" />
+          </video>
+        </div>
       </section>
 
       <!-- Messages Section -->
@@ -143,7 +146,6 @@
       <section id="download">
         <h2 class="section-title fade-in">Download Memories</h2>
         <div class="download-area fade-in">
-          <br /><br />
           <a href="./video/aish.MOV" download class="download-btn"
             >Download qillarin</a
           >
@@ -151,35 +153,37 @@
         </div>
       </section>
     </main>
-  </body>
-  <script>
-    const playPauseBtn = document.getElementById("playPause");
-    const music = document.getElementById("bgMusic");
 
-    let isPlaying = false;
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+    <script>
+      const playPauseBtn = document.getElementById("playPause");
+      const music = document.getElementById("bgMusic");
 
-    playPauseBtn.addEventListener("click", () => {
-      if (isPlaying) {
-        music.pause();
-        playPauseBtn.textContent = "🔇";
-      } else {
-        music.play();
-        playPauseBtn.textContent = "🔊";
-      }
-      isPlaying = !isPlaying;
-    });
+      let isPlaying = false;
 
-    // Auto-play once user interacts with the page
-    window.addEventListener(
-      "click",
-      () => {
-        if (!isPlaying) {
+      playPauseBtn.addEventListener("click", () => {
+        if (isPlaying) {
+          music.pause();
+          playPauseBtn.textContent = "🔇";
+        } else {
           music.play();
           playPauseBtn.textContent = "🔊";
-          isPlaying = true;
         }
-      },
-      { once: true }
-    );
-  </script>
+        isPlaying = !isPlaying;
+      });
+
+      window.addEventListener(
+        "click",
+        () => {
+          if (!isPlaying) {
+            music.play();
+            playPauseBtn.textContent = "🔊";
+            isPlaying = true;
+          }
+        },
+        { once: true }
+      );
+    </script>
+  </body>
 </html>
